@@ -12,7 +12,7 @@ func helloWorld(w http.ResponseWriter, r *http.Request) {
 }
 
 func handleRequests() {
-	http.HandleFunc("/", helloWorld)
+	http.HandleFunc("/hello", helloWorld)
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
 

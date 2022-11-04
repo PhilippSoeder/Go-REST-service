@@ -1,6 +1,11 @@
-FROM golang:1.19
-WORKDIR /bin/main/
-COPY main.go .
-RUN go build main.go
-EXPOSE 8080
-CMD [ "./main" ]
+FROM golang:alpine AS build
+LABEL stage=gobuilder
+ENV CGO_ENABLED 0
+ENV GOOS linux
+WORKDIR /build
+COPY . .
+RUN go build -o /build/main main.go
+FROM alpine
+WORKDIR /build
+COPY --from=build /build/main /build/main
+CMD ["./main"]

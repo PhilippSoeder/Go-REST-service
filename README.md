@@ -1,5 +1,5 @@
 # Go-REST-service
-This is a simple rest service written in go, not super useful, just something 
+This is a simple rest service written in go, not super useful, just something
 for me to play go.
 
 ## How to run and test rest service
@@ -8,6 +8,6 @@ for me to play go.
 3) open  `localhost:8080/hello` in webbrowser
 
 ## How to create a docker image, run and test it
-1) run `docker build -t goRestService .` in terminal
+1) run `docker build -t gorestservice .` in terminal
 2) run `docker run --name gorestservice -d -p 8080:8080 gorestservice` in terminal
-3) open  `localhost:8080/hello` in webbrowser
+3) open `localhost:8080/hello` in webbrowser
